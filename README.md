@@ -21,6 +21,3 @@
 Но, можно использовать инструменты, которые предоставляет нам lerna. 
 Например, команда `lerna exec npm run start:ssr --scope=game` запустит команду start:ssr для проекта с именем game.
 При этом команду можно вызывать из любого места проекта.
-
-## Лицензии
-Icons made by [Freepik](https://www.freepik.com) from [www.flaticon.com](https://www.flaticon.com/)
