@@ -1,0 +1,5 @@
+.root {
+  @apply mt-4 py-2 w-full rounded-lg;
+  @apply bg-primary hover:bg-lightPrimary focus:outline-none;
+  @apply text-white text-lg;
+}

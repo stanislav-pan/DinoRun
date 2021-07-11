@@ -1,0 +1,14 @@
+{
+  "name": "DinoRun",
+  "short_name": "DinoRun",
+  "start_url": "/",
+  "background_color": "#fff",
+  "display": "standalone",
+  "theme_color": "#fff",
+  "icons": [
+    {
+      "src": "/client/icon512.png",
+      "sizes": "512x512"
+    }
+  ]
+}

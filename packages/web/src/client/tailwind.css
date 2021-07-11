@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body::backdrop {
+  background: white;
+}
+
+#app {
+  height: 100%;
+}
+
+@import "emoji-mart/css/emoji-mart.css";

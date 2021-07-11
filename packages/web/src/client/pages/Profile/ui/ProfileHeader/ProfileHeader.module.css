@@ -1,0 +1,7 @@
+.profileHeader {
+  @apply flex justify-between h-10 mr-6 ml-6;
+}
+
+.backIcon {
+  @apply mr-3 -ml-1;
+}

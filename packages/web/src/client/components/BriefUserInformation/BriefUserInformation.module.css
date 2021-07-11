@@ -1,0 +1,6 @@
+.nameInput {
+  @apply p-0;
+  @apply border-none;
+
+  @apply leading-6 outline-none;
+}

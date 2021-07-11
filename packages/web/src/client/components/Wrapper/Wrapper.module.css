@@ -1,0 +1,5 @@
+.wrapper {
+  @apply flex h-screen w-full bg-gray-50;
+  @apply md:items-center;
+  @apply font-fontNunito;
+}

@@ -1,0 +1,52 @@
+.lightButton {
+  @apply bg-green-700 text-white text-xl font-semibold;
+}
+.darkButton {
+  @apply bg-purple-200 text-purple-900 text-xl font-semibold;
+}
+
+.darkTheme {
+  @apply bg-primary text-white;
+}
+
+.lightTheme {
+  @apply bg-purple-100 text-purple-900;
+}
+
+.darkBackground {
+  background-image: url("./img/dark.jpg");
+  @apply text-white;
+}
+
+.lightBackground {
+  background-image: url("./img/light.jpg");
+  @apply text-purple-900;
+}
+
+.title {
+  @apply p-5 mb-2 font-bold text-6xl;
+}
+
+.darkText {
+  @apply p-5 mb-2 font-extralight text-2xl;
+  @apply text-white;
+}
+
+.lightText {
+  @apply p-5 mb-2 font-extralight text-2xl;
+  @apply text-green-900 bg-white bg-opacity-30 rounded-xl;
+}
+
+.darkTitle {
+  @apply darkText;
+  @apply title;
+}
+
+.lightTitle {
+  @apply lightText;
+  @apply title;
+}
+
+.customBackground {
+  background-image: url("./img/light.jpg");
+}

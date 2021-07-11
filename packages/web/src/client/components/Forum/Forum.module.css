@@ -1,0 +1,51 @@
+.flexRowCol {
+  @apply flex lg:flex-row flex-col;
+}
+.darkTheme {
+  @apply bg-primary text-white;
+}
+.padding {
+  @apply p-3;
+}
+.forumHeader {
+  @apply darkTheme padding;
+}
+.messageList {
+  @apply w-full bg-primary py-1;
+}
+.messageItem {
+  @apply flex flex-col mb-3 px-3;
+}
+.messageInfo {
+  @apply flex mb-3;
+}
+.messageBlock {
+  @apply padding;
+  @apply flex-1 bg-white break-words flex flex-col pr-14;
+}
+.message {
+  @apply break-all bg-white h-full;
+}
+.userInfo {
+  @apply padding;
+  @apply w-2/12 flex flex-col items-center bg-purple-50;
+}
+.topicRow {
+  @apply flexRowCol;
+  @apply border-b p-0 lg:py-3 lg:px-3;
+  @apply cursor-pointer hover:bg-indigo-100;
+}
+.titleHeader {
+  @apply flexRowCol;
+  @apply padding;
+  @apply darkTheme border-b;
+}
+.topicInfo {
+  @apply flex-1 flex flex-row mx-2;
+}
+.topicHeader {
+  @apply flex-1 hidden lg:block;
+}
+.rowHeader {
+  @apply flex-1 bg-purple-50 lg:bg-transparent break-words;
+}

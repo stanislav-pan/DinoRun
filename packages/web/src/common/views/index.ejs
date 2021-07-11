@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>DinoRun</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+
+    <link rel="manifest" href="/client/manifest.json" />
+
+    <% if(isClientTempate){ %> <% } else{ %>
+    <style>
+      <%- inlineStyles %>
+    </style>
+    <% } %>
+  </head>
+  <body>
+    <div id="app"><%- reactApp %></div>
+
+    <script>
+      //   if ("serviceWorker" in navigator) {
+      //     window.addEventListener("load", function () {
+      //       navigator.serviceWorker.register("/service-worker.js");
+      //     });
+      //   }
+    </script>
+
+    <% if(isClientTempate){ %> <% } else{ %>
+    <script>
+      window.INITIAL_STATE = <%- initialState %>;
+    </script>
+
+    <%- scripts %> <%- styleTags %> <% } %>
+  </body>
+</html>

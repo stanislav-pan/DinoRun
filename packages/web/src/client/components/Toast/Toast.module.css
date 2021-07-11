@@ -1,0 +1,31 @@
+.toastWrapper {
+  @apply absolute bottom-6 right-6 z-20;
+}
+
+.toastTitle {
+  @apply rounded-t p-2;
+  @apply text-white font-bold;
+}
+
+.titleError {
+  @apply bg-red-500;
+}
+
+.titleSuccess {
+  @apply bg-green-500;
+}
+
+.toast {
+  @apply border border-t-0 rounded-b;
+  @apply p-2;
+}
+
+.toastError {
+  @apply border-red-400 bg-red-100;
+  @apply text-red-700;
+}
+
+.toastSuccess {
+  @apply border-green-400 bg-green-100;
+  @apply text-green-700;
+}

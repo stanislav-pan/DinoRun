@@ -1,0 +1,1 @@
+export { BriefUserInformation } from "./BriefUserInformation";

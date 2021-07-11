@@ -1,0 +1,15 @@
+.profile {
+  @apply m-auto flex flex-col bg-white rounded w-full md:w-3/6 text-primary;
+}
+
+.logoutBtn {
+  @apply text-lg text-red-500;
+}
+
+.divider {
+  @apply w-full h-2 bg-primary;
+}
+
+.formWrapper {
+  @apply mt-5 mr-8 mb-10 ml-8;
+}

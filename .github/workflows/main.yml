@@ -1,0 +1,52 @@
+name: Deploy
+
+on:
+  push:
+    branches: [main, ssl]
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Adding Known Hosts
+        run: mkdir ~/.ssh && touch ~/.ssh/known_hosts && ssh-keyscan -H ${{ secrets.YANDEX_SSH_HOST }} >> ~/.ssh/known_hosts
+
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          known_hosts: "just-a-placeholder-so-we-dont-get-errors"
+
+      - name: Create Dotenv File
+        uses: actually-colab/github-action-create-env-file@v2.3
+        with:
+          envkey_DINORUN_DOMAIN: ${{ secrets.DINORUN_DOMAIN }}
+          envkey_DINORUN_PROXY_API: ${{ secrets.DINORUN_PROXY_API }}
+
+          envkey_DINORUN_WEB_PORT: ${{ secrets.DINORUN_WEB_PORT }}
+          envkey_DINORUN_API_PORT: ${{ secrets.DINORUN_API_PORT }}
+          envkey_DINORUN_API_DOMAIN: ${{ secrets.DINORUN_API_DOMAIN }}
+
+          envkey_POSTGRES_HOST: ${{ secrets.POSTGRES_HOST }}
+          envkey_POSTGRES_PORT: ${{ secrets.POSTGRES_PORT }}
+          envkey_POSTGRES_USER: ${{ secrets.POSTGRES_USER }}
+          envkey_POSTGRES_PASSWORD: ${{ secrets.POSTGRES_PASSWORD }}
+          envkey_POSTGRES_DB: ${{ secrets.POSTGRES_DB }}
+      
+      - name: Copy project
+        run: rsync -av -e ssh --exclude='_actions' --exclude='.git' --exclude='.github' --exclude='.vscode' --exclude='workflow' ./ ${{ secrets.YANDEX_PUBLIC_IP }}:/home/github-actions/DinoRun/
+
+      - name: Docker build
+        run: ssh ${{ secrets.YANDEX_PUBLIC_IP }} sudo docker-compose -f DinoRun/docker-compose.yaml -p dinorun build --force-rm
+
+      - name: Docker down
+        run: ssh ${{ secrets.YANDEX_PUBLIC_IP }} sudo docker-compose -f DinoRun/docker-compose.yaml -p dinorun down
+
+      - name: Docker remove volume
+        run: ssh ${{ secrets.YANDEX_PUBLIC_IP }} sudo docker volume rm -f dinorun_static-content
+
+      - name: Docker Up
+        run: ssh ${{ secrets.YANDEX_PUBLIC_IP }} sudo docker-compose -f DinoRun/docker-compose.yaml -p dinorun up -d && sudo docker image prune -f

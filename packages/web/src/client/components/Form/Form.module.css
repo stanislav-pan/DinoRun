@@ -1,0 +1,6 @@
+.form {
+  @apply p-8 m-4 w-full;
+  @apply bg-white rounded shadow-lg;
+  @apply md:max-w-sm md:mx-auto;
+  @apply z-10;
+}

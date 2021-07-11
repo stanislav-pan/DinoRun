@@ -1,0 +1,31 @@
+.avatar {
+  @apply relative;
+
+  width: 67px;
+  height: 67px;
+
+  @apply rounded-full;
+  @apply overflow-hidden;
+}
+
+.changeBtn {
+  @apply absolute bottom-0;
+  @apply w-full h-0;
+
+  @apply bg-gray-700;
+  @apply transition-all;
+}
+
+.avatar:hover .changeBtn {
+  @apply h-1/3;
+}
+
+.image {
+  width: inherit;
+  height: inherit;
+  border-radius: inherit;
+}
+
+.changeBtn svg {
+  @apply h-full;
+}

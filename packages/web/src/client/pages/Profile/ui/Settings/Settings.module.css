@@ -1,0 +1,19 @@
+.item {
+  @apply border-b-4 border-primary;
+}
+
+.item:first-of-type {
+  @apply border-t-4 border-primary;
+}
+
+.button {
+  @apply flex items-center w-full h-11 pl-9;
+}
+
+.icon {
+  @apply mr-6 w-6;
+}
+
+.span {
+  @apply font-medium text-base;
+}

@@ -1,0 +1,37 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "esnext",
+    "moduleResolution": "node",
+    "lib": ["es2020", "dom", "dom.iterable", "webworker"],
+    "sourceMap": true,
+    "outDir": "./dist",
+    "rootDir": "./src",
+    "baseUrl": "./",
+    "paths": {
+      "@icons/*": ["src/client/components/ui/icons/*"],
+      "@hooks/*": ["src/client/hooks/*"],
+      "@api/*": ["src/client/core/api/*"],
+      "@redux/*": ["src/client/redux/*"],
+      "@core/*": ["src/client/core/*"],
+      "@components/*": ["src/client/components/*"],
+      "@pages/*": ["src/client/pages/*"],
+      "@utils/*": ["src/client/utils/*"],
+      "@client/*": ["src/client/*"],
+      "@webpack/*": ["webpack/*"]
+    },
+    "removeComments": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "strictNullChecks": true,
+    "alwaysStrict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "jsx": "react"
+  },
+  "include": ["src/**/*"],
+  "exclude": ["node_modules"]
+}
